@@ -14,7 +14,7 @@ filter {
       match => { "message" => "status update %{WORD:status}" }
       match => { "message" => "UUID: %{UUID:UUID}" }
       match => { "message" => "/var/lib/mesos/slaves/(?<agent>[\w\-]+)/frameworks/(?<framework>[\w\-]+)/executors/(?<executor>[\w\-\.]+)/runs/%{UUID:run}" }
-      match => { "message" => "(?<class>[A-Z])%{MONTHNUM:month}%{MONTHDAY:day} %{TIME:time}  %{INT:pid} (?<sourcecode>[\w\.]+):%{POSINT:line}] %{GREEDYDATA:message}" }
+      match => { "message" => "(?<class>[A-Z])%{MONTHNUM:month}%{MONTHDAY:day} %{TIME:time} %{INT:pid} (?<sourcecode>[\w\.]+):%{POSINT:line}] %{GREEDYDATA:message}" }
       overwrite => [ "message" ]
     }
   }
